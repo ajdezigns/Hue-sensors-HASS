@@ -2,7 +2,7 @@
 Sensor for checking the status of Hue sensors.
 
 For more details about this platform, please refer to the documentation at
-https://home-assistant.io/components/sensor.hue/
+https://github.com/robmarkcole/Hue-sensors-HASS
 """
 import logging
 from datetime import timedelta
@@ -82,9 +82,9 @@ def parse_sml(response):
         name = ' '.join(arr)
         hue_state = response['state']['presence']
         if hue_state is True:
-            state = 'on'
+            state = 'Detected'
         else:
-            state = 'off'
+            state = 'Clear'
 
         data = {'model': 'SML',
                 'name': name,
